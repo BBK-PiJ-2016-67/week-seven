@@ -1,31 +1,29 @@
-import java.util.Map;
-import java.util.HashMap;
-
 public class StringMap implements SimpleMap {
 
-	Map<String, String> dictionary;
+	private String[] map;
+	private int count;
 
 	public StringMap() {
-		dictionary = new HashMap<String, String>();
+		map = new String[1000];
+		count = 0;
 	}
 
 	public void put(int key, String name) {
-		String stringKey = new Integer(key).toString();
-		dictionary.put(stringKey, name);
+		count++;
+		map[key] = name;
 	}
 
 	public String get(int key) {
-		String stringKey = new Integer(key).toString();
-		return dictionary.get(stringKey);
+		return map[key];
 	}
 
 	public void remove(int key) {
-		String stringKey = new Integer(key).toString();
-		dictionary.remove(stringKey);
+		count--;
+		map[key] = null;
 	}
 
 	public boolean isEmpty() {
-		return dictionary.isEmpty();
+		return count == 0;
 	}
 
 }
