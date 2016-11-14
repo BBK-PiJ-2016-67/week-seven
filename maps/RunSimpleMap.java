@@ -17,6 +17,8 @@ public class RunSimpleMap {
 		map.remove(1);
 		
 		System.out.println(map.isEmpty());
+		
+		map.remove(1);
 	}
 
 }
